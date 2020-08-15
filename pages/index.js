@@ -21,7 +21,7 @@ function Home(props) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getInitialProps = async () => {
   const response = await fetch("https://pokeapi.co/api/v2/pokedex/2")
 
   if (response.ok) {
