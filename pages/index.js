@@ -1,11 +1,24 @@
 import React from "react"
+import Head from "next/head"
+
+function PokemonsList({ list }) {
+  if (!list?.length) return null
+
+  return list.map((pokemon) => <div id={pokemon.name}>{pokemon.name}</div>)
+}
 
 function Home(props) {
   const { pokemons } = props
 
-  if (!pokemons?.length) return "Carregando"
-
-  return pokemons.map((pokemon) => <div id={pokemon.name}>{pokemon.name}</div>)
+  return (
+    <>
+      <Head>
+        <title>Pokedex</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <PokemonsList list={pokemons} />
+    </>
+  )
 }
 
 export const getStaticProps = async () => {
