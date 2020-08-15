@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project using nextjs to display pokemons as pokedex",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
